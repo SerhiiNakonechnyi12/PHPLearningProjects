@@ -16,11 +16,16 @@
             <input type="text" placeholder="Email" name="email"><br>
             <button  type="submit" id="login" name="accept">Login</button><br><br>
             <a id="forgot-password" href="#">Forgot password?</a><br><br>
+
         </form>
         <!-- <div id="white">...or log in with:</div>
         <input type="button" value="Facebook" src="" class="button_Facebook">
         <input type="button" value="Twitter" src="" class="button_Twitter"> -->
-        
+        <form action="showAll.php" method="POST">
+            <button  type="submit" id="login" name="accept" >S</button><br><br>
+
+        </form>
+
     </div>
 </div>
 </body>
@@ -35,23 +40,42 @@
 // логина, пароля и адреса электронной почты пользователя. 
 // Кроме этих полей форма, по вашему усмотрению, может содержать и другие поля.
 // Предусмотреть кнопку для вывода списка пользователей на экран
-$i = 0;
-
+//$i = 0;
 
 if (isset($_POST["accept"])) {
     $login = $_POST["login"];
     $password = $_POST["password"];
     $email = $_POST["email"];
+    $user = array("login"=>$login, "password"=>$password, "email"=>$email);
+    $users = array();
+    if(file_exists("users.json")){
+        $str = file_get_contents("users.json");
+        $users = json_decode($str);
+        array_push($users, $user);
+    }
+    $fd = fopen("users.json", "w") or die("Error");
+    $str = json_encode(($users));
+       
 
-    // list ($login,$password,$email) = $userInfo;
+    //записали 
+    fwrite($fd, $str);
+    fclose($fd);
+    // $users = array($user);
+
+        
+    //     //unset($_POST["accept"]);
+    // }
+    // else
+    // {
+        
+
+    // }
 
     echo (
     "<form><div>
         Login: ".$login. "<br>
         Password: ".$password. "<br>
         Email: ".$email. "<br>
-
-        userInfo: ".$userInfo."<br>
 
     </div></form>");
     // echo 
@@ -61,7 +85,4 @@ if (isset($_POST["accept"])) {
     //     .$email.
     // "</span>";
 }
-
-
-
 ?>
