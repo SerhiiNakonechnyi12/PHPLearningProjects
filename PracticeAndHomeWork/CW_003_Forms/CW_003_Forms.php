@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RGB Text</title>
 </head>
+<body>
     <form method="POST">
         <div>R<input type='text' size='40' name="r"></div>
         <div>G<input type='text' size='40' name="g"></div>
@@ -21,7 +22,13 @@ if (isset($_POST["accept"])) {
     $r = $_POST["r"];
     $g = $_POST["g"];
     $b = $_POST["b"];
-    echo "<span style='color: rgb(".$r.",".$g.",".$b.")'>Change text color</span>";
+    // echo "<span style='color: rgb(".$r.",".$g.",".$b.")'>Change text color</span>";
+    echo "<span style='color: rgb(".$r.",".$g.",".$b.")'>Change text color".$r."</span>";
+    echo "<div>"
+    .$r.","
+    .$g.","
+    .$b.
+    "</div>";
 }
 ?>
 

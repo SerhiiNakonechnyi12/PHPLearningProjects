@@ -7,61 +7,59 @@
     <link rel="stylesheet" href="HW_003_style.css">
 </head>
 <body>
-    <!-- <form>
-        <div>
-            Login:
-            <br>
-            <input type="text" size="40" name="login">
-        </div>
-        <div>Password:
-            <br>
-            <input type="password" size="40" name="password">
-        </div>
-        <div>Email:
-            <br>
-            <input type="text" size="40" name="email">
-        </div>
-    </form> -->
-
+<div class="container">
     <div id="block">
-        <form action="#" id="grey-form">
+        <form action="#" id="grey-form" method="POST">
             <h1>Member Login</h1><br>
             <input type="text" placeholder="Username" name="login"><br>
             <input type="text" placeholder="Password" name="password"><br>
             <input type="text" placeholder="Email" name="email"><br>
-            <button id="login" name="accept">Login</button><br><br>
+            <button  type="submit" id="login" name="accept">Login</button><br><br>
             <a id="forgot-password" href="#">Forgot password?</a><br><br>
         </form>
-        <div id="white">...or log in with:</div>
+        <!-- <div id="white">...or log in with:</div>
         <input type="button" value="Facebook" src="" class="button_Facebook">
-        <input type="button" value="Twitter" src="" class="button_Twitter">
+        <input type="button" value="Twitter" src="" class="button_Twitter"> -->
+        
     </div>
+</div>
 </body>
 </html>
 
-<!-- Тема: Формы
-Задание.
-Создать форму для регистрации пользователей. 
-Форма может быть произвольной, но обязательно должна содержать поля для 
-логина, пароля и адреса электронной почты пользователя. 
-Кроме этих полей форма, по вашему усмотрению, может содержать и другие поля.
-Предусмотреть кнопку для вывода списка пользователей на экран -->
+
 <?php
-if(isset($_POST["accept"])) {
+// Тема: Формы
+// Задание.
+// Создать форму для регистрации пользователей. 
+// Форма может быть произвольной, но обязательно должна содержать поля для 
+// логина, пароля и адреса электронной почты пользователя. 
+// Кроме этих полей форма, по вашему усмотрению, может содержать и другие поля.
+// Предусмотреть кнопку для вывода списка пользователей на экран
+$i = 0;
+
+
+if (isset($_POST["accept"])) {
     $login = $_POST["login"];
     $password = $_POST["password"];
     $email = $_POST["email"];
-    // echo "<span style='color: rgb(".$r.",".$g.",".$b.")'>Change text color</span>";
-    // echo (
-    // "<div>
-    //     Login: ".$login. "<br>
-    //     Password: ".$password. "<br>
-    //     Email: ".$email. "<br>
-    // </div>");
+
+    // list ($login,$password,$email) = $userInfo;
+
     echo (
-    "<span>
-        Login: ".$login.",".$password.",".$email."
-    </span>");
+    "<form><div>
+        Login: ".$login. "<br>
+        Password: ".$password. "<br>
+        Email: ".$email. "<br>
+
+        userInfo: ".$userInfo."<br>
+
+    </div></form>");
+    // echo 
+    // "<span>"
+    //     .$login.","
+    //     .$password.","
+    //     .$email.
+    // "</span>";
 }
 
 

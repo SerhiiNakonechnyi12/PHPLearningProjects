@@ -43,7 +43,7 @@ input {
     background-color: rgb(212, 101, 77);
     text-align: center;
     width: 350px;
-    height: 540px;
+    height: 540px;    
 }
 
 a {
@@ -69,3 +69,13 @@ input.button_Twitter {
     cursor: pointer;
     color: aliceblue;    
 }
+/* 
+.container::before,
+.container::after {
+    content: "";
+    display: table;
+}        */
+/* .container::after {
+    clear: both
+} */
+
