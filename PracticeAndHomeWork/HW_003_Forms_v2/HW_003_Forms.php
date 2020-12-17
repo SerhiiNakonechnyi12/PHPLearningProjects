@@ -21,7 +21,7 @@
         <!-- <div id="white">...or log in with:</div>
         <input type="button" value="Facebook" src="" class="button_Facebook">
         <input type="button" value="Twitter" src="" class="button_Twitter"> -->
-        <form action="showAll.php" method="GET">
+        <form action="showAll.php" method="POST">
             <button  type="submit" id="login" name="accept" >S</button><br><br>
 
         </form>
@@ -40,30 +40,36 @@
 // логина, пароля и адреса электронной почты пользователя. 
 // Кроме этих полей форма, по вашему усмотрению, может содержать и другие поля.
 // Предусмотреть кнопку для вывода списка пользователей на экран
-$i = 0;
+//$i = 0;
 
 if (isset($_POST["accept"])) {
     $login = $_POST["login"];
     $password = $_POST["password"];
     $email = $_POST["email"];
-    $user = array();
-    if(!file_exists("users.json")){
-    $users = array($users);
-
-        $str = json_encode(($users));
-        $fd = fopen("usersFile.txt", "a+") or die("Error");
-
-        //записали 
-        fwrite($fd,"Login: ". $_POST["login"] . ", email: " .$_POST["email"]. ", password: ".$_POST["password"] ."\n");
-        fclose($fd);
-        unset($_POST["accept"]);
-    }
-    else
-    {
+    $user = array("login"=>$login, "password"=>$password, "email"=>$email);
+    $users = array();
+    if(file_exists("users.json")){
         $str = file_get_contents("users.json");
         $users = json_decode($str);
         array_push($users, $user);
     }
+    $fd = fopen("users.json", "w") or die("Error");
+    $str = json_encode(($users));
+       
+
+    //записали 
+    fwrite($fd, $str);
+    fclose($fd);
+    // $users = array($user);
+
+        
+    //     //unset($_POST["accept"]);
+    // }
+    // else
+    // {
+        
+
+    // }
 
     echo (
     "<form><div>

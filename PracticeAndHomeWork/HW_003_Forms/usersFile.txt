@@ -1,0 +1,3 @@
+Login: Tom, email: tyt, password: qwe
+Login: Serrhii, email: Serhii@mail, password: 123
+Login: Bill, email: Bill@mail, password: BillyWin

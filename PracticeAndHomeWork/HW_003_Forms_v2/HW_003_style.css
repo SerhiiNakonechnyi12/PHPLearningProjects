@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+    margin: 10px;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#login {
+    background-color: rgb(87, 164, 98);
+    color: aliceblue;
+    width: 280px;
+    height: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.22);
+    cursor: pointer;
+}
+
+#grey-form {    
+    text-align: center;
+    background-color: rgb(230, 228, 228);
+}
+
+#white {
+    color: aliceblue;
+    text-align: center;
+}
+
+input {
+    width: 255px;
+    height: 40px;
+    text-align: center;
+    border: none;
+}
+
+#forgot-password {
+    color: rgb(212, 101, 77);
+    border: none;
+    background-color: rgb(230, 228, 228);
+}
+
+#block {
+    padding: 20px 60px 0px 60px;
+    background-color: rgb(212, 101, 77);
+    text-align: center;
+    width: 350px;
+    height: 540px;    
+}
+
+a {
+    text-decoration: none;
+}
+
+input.button_Facebook {
+    width: 150px;
+    height: 40px;
+    padding-left: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.22);
+    background: rgb(65, 91, 155) url(https://img.icons8.com/color/28/000000/facebook.png) no-repeat 10px center;
+    cursor: pointer;
+    color: aliceblue;
+}
+
+input.button_Twitter {
+    width: 150px;
+    height: 40px;
+    padding-left: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.22);
+    background: rgb(86, 181, 230) url(https://img.icons8.com/color/28/000000/twitter-squared.png) no-repeat 10px center;
+    cursor: pointer;
+    color: aliceblue;    
+}
+/* 
+.container::before,
+.container::after {
+    content: "";
+    display: table;
+}        */
+/* .container::after {
+    clear: both
+} */
+
