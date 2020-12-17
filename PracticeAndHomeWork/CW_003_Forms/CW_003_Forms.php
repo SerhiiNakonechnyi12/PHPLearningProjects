@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>RGB Text</title>
 </head>
     <form method="POST">
         <div>R<input type='text' size='40' name="r"></div>
