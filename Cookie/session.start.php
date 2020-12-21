@@ -1,6 +1,11 @@
 <?
+// session_start();
+// if(!isset($_SESSION["time"])){
+//     $_SESSION["time"] = date("H:i:s");
+// }
+// echo $_SESSION["time"];
+
+
 session_start();
-if(!isset($_SESSION["time"])){
-    $_SESSION["time"] = date("H:i:s");
-}
+$_SESSION["time"] = date("H:i:s");
 echo $_SESSION["time"];
