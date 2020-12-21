@@ -101,8 +101,8 @@ echo "<table border='1'>\n";
 	for($r=1;$r<=$rows;$r++){
 		echo "<tr>\n";
 		for($c=1; $c<=$cols; $c++){
-			if($r==1 || $c==1){echo "\t\t<th style='background:$color1'>".$r*$c."</th>\n";}
-			else{echo "\t\t<td style='background:$color2'>".$r*$c."</td>\n";}
+			if($r==1 || $c==1){echo "\t\t<th style='background:".$color1.'>'.$r*$c."</th>\n";}
+			else{echo "\t\t<td style='background:".$color2."'>'".$r*$c."</td>\n";}
 		}
 		echo "</tr>";
 	}
