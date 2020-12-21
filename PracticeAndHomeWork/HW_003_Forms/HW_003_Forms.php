@@ -22,7 +22,7 @@
         <input type="button" value="Facebook" src="" class="button_Facebook">
         <input type="button" value="Twitter" src="" class="button_Twitter"> -->
         <form action="showAll.php" method="GET">
-            <button  type="submit" id="login" name="accept" >S</button><br><br>
+            <button  type="submit" id="login" name="accept" >Show all</button><br><br>
 
         </form>
 
