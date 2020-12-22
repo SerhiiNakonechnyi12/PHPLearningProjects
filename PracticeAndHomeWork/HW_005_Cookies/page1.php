@@ -33,19 +33,23 @@ $_SESSION["time"] = date("D, d M Y H:i:s");
 
 $_SESSION["name"] = "Serhii";
 
-// $_SESSION["counter"] = isset($_COOKIE['counter']) ? $_COOKIE['counter'] : 0;
-//$_SESSION++;
+//$_SESSION["counter"] = isset($_SESSION['counter']) ? $_SESSION['counter'] : 0;
+//$_SESSION["counter"]++;
 
 echo (
     "Посещений страницы: ".$counter. "<br/>
     Имя посетителя: ".$userName."<br/>
     Дата последнего посещения: ".$timeCookie. "<br/><br/>"
     
-    // "Посещений страницы: ".$_SESSION["counter"]. "<br/>
-    // "Имя: ".$_SESSION["name"] "<br/>
+    
+    // Посещений страницы: ".$_SESSION["counter"]. "<br/>
+    // Имя: ".$_SESSION["name"] "<br/>
     // Дата последнего посещения: ".$_SESSION["time"]
     
 );
+
+session_unset();
+session_destroy();
 ?>
 
 
