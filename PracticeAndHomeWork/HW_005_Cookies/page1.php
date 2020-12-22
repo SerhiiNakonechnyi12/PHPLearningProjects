@@ -40,19 +40,19 @@ else
 {
     $_SESSION["counter"] = $_SESSION["counter"] +1;
 }
- echo "Counter from session: ".$_SESSION["counter"];//
-// $_SESSION["counter"] = isset($_SESSION['counter']) ? $_SESSION['counter'] : 0;
-// $_SESSION["counter"]++;
 
+// Session
+echo (
+    "Counter from session: ".$_SESSION["counter"]."<br/><br/> 
+    Имя: ".$_SESSION["name"]. "<br/>
+    Дата последнего посещения: ".$_SESSION["time"]
+    );
+
+// Cookies
 echo (
     "Посещений страницы: ".$counter. "<br/>
     Имя посетителя: ".$userName."<br/>
     Дата последнего посещения: ".$timeCookie. "<br/><br/>"
-    
-    
-    // Посещений страницы: ".$_SESSION["counter"]. "<br/>
-    // Имя: ".$_SESSION["name"] "<br/>
-    // Дата последнего посещения: ".$_SESSION["time"]
     
 );
 
