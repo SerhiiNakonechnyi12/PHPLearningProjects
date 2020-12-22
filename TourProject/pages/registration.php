@@ -8,17 +8,18 @@ if(!isset($_POST["regbtn"])){
             <input type="text" name="login" class="form-control">
         </div>
         <div class="form-group">
-            <label for="login">Password:</label>
-            <input type="text" name="login" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="passw1">Confirm password:</label>
+            <label for="passw1">Password:</label>
             <input type="password" name="passw1" class="form-control">
         </div>
         <div class="form-group">
-            <label for="login">Email:</label>
-            <input type="text" name="login" class="form-control">
+            <label for="passw2">Confirm password:</label>
+            <input type="password" name="passw2" class="form-control">
         </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" name="email" class="form-control">
+        </div>
+        <input type="submit" name="regbtn" value="Add user">
     </form>
     <?
 }

@@ -16,13 +16,14 @@
             </header>
         </div>
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light"></nav>
-                <? 
-                    include_once("pages/menu.php");
-                    include_once("pages/functions.php");
-                
-                ?>
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <? 
+                        include_once("pages/menu.php");
+                        include_once("pages/functions.php");
+                    
+                    ?>
+                </nav>
             </div>
         </div>
         <div class="row">
