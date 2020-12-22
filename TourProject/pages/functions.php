@@ -4,7 +4,7 @@ function register($name, $passw, $email){
     $name = trim(htmlspecialchars($name));
     $passw = trim(htmlspecialchars($passw));
     $email = trim(htmlspecialchars($email));
-    if($name == "" || $passw == "" || $email == ""){
+    if(strlen($name) == "" || strlen($passw) == "" || strlen($email) == ""){
         echo "<h3><span style='color: red'>Небходимо заполнить все поля!</span></h3>";
         return false;
     }
