@@ -24,7 +24,7 @@ if(!isset($_POST["regbtn"])){
     <?
 }
 else {
-    if(register($_POST["name"], $_POST["passw1"], $_POST["email"])){
+    if(register($_POST["login"], $_POST["passw1"], $_POST["email"])){
         echo "<h3><span style='color: green'>Пользователь добавлен!</span></h3>";
     }
 }

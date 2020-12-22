@@ -5,7 +5,7 @@ function register($name, $passw, $email){
     $passw = trim(htmlspecialchars($passw));
     $email = trim(htmlspecialchars($email));
     if(strlen($name) == "" || strlen($passw) == "" || strlen($email) == ""){
-        echo "<h3><span style='color: red'>Небходимо заполнить все поля!</span></h3>";
+        echo "<h3><span style='color: red'>Необходимо заполнить все поля!</span></h3>";
         return false;
     }
     if(strlen($name) < 3 || strlen($name) > 30 || strlen($passw) < 3 || strlen($passw) > 30){

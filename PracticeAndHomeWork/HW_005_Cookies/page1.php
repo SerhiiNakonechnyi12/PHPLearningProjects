@@ -12,7 +12,7 @@
 // например clearCookie.php для 
 // сброса всех данных, хранящихся в куки.
 
-
+session_start();////
 // Cookie
 $counter = isset($_COOKIE['counter']) ? $_COOKIE['counter'] : 0;
 $counter++;
@@ -24,17 +24,25 @@ setcookie("timeCookie", $timeCookie);
 
 $userName = "Serhii";
 
+// 
 setcookie($counter, time() - 3600);
 
 // Сессии
-session_start();
+//session_start();
 $_SESSION["time"] = date("D, d M Y H:i:s");
 // echo $_SESSION["time"];
 
 $_SESSION["name"] = "Serhii";
-
-//$_SESSION["counter"] = isset($_SESSION['counter']) ? $_SESSION['counter'] : 0;
-//$_SESSION["counter"]++;
+if(!isset($_SESSION["counter"])){
+    $_SESSION["counter"] = 1;
+}
+else
+{
+    $_SESSION["counter"] = $_SESSION["counter"] +1;
+}
+ echo "Counter from session: ".$_SESSION["counter"];//
+// $_SESSION["counter"] = isset($_SESSION['counter']) ? $_SESSION['counter'] : 0;
+// $_SESSION["counter"]++;
 
 echo (
     "Посещений страницы: ".$counter. "<br/>
@@ -48,8 +56,8 @@ echo (
     
 );
 
-session_unset();
-session_destroy();
+//session_unset();
+//session_destroy();
 ?>
 
 
