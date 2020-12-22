@@ -8,7 +8,7 @@
 <body>
     <form method="POST" action="surNamePage.php">
         Enter your name: 
-        <input name="Name" type="text">
+        <input name="name" type="text">
         <br>
         <br>
         <input type="submit" value="Отправить">
@@ -25,7 +25,7 @@
 // На первой странице спросите имя, на второй фамилию, на третьей возраст,
 // а на четвертой выведите все данные.
 
-$name = $_POST['Name'];
-$_SESSION["name"] = $name;
+// $name = $_POST['Name'];
+// $_SESSION["name"] = $name;
 
 ?>

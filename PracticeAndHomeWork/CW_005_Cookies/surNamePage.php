@@ -14,7 +14,7 @@ if(mb_strlen($_POST["name"])>0){
 <body>
     <form method="POST" action="agePage.php">
         Enter your surname: 
-        <input name="Surname" type="text">
+        <input name="surname" type="text">
         <br>
         <br>
         <input type="submit" value="Отправить">
@@ -28,3 +28,4 @@ else
     header("location: namePage.php");
 }
 ?>
+
