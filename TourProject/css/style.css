@@ -1,4 +1,12 @@
-.imgGallery {
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); */
+
+/* * {
     margin: 10px;
-    padding: 10px;;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+} */
+
+.imgGallery {
+    margin: 0px;
+    /* padding: 10px;; */
 }

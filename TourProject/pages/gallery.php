@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style></style>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 <h2>Gallery</h2>
@@ -40,9 +40,9 @@ if(isset($_POST["showimg"])){
     $arr = glob($path."*.".$ext);
     echo "<div class='card border-secondary mb-3'>";
     echo "<div class='card-header'>Gallery Content</div>";
-    echo "<div class='card-body' padding='10px'>";
+    echo "<div class='card-body'>";
     foreach($arr as $item){
-        echo "<a href='.".$item."'target='_blank'><img src='".$item."' style='width: 100px' alt='picture' class='img1'></a>";
+        echo "<a href='.".$item."'target='_blank'><img src='".$item."' style='width: 100px' alt='picture' ></a>";
     }
     echo "</div></div>";
 }
