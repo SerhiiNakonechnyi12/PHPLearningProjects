@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
 <h2>Gallery</h2>
 <form action="index.php?page=3" method="POST">
     <p>Выберите расширение для отображения картинок</p>
@@ -42,10 +33,8 @@ if(isset($_POST["showimg"])){
     echo "<div class='card-header'>Gallery Content</div>";
     echo "<div class='card-body'>";
     foreach($arr as $item){
-        echo "<a href='.".$item."'target='_blank'><img src='".$item."' style='width: 100px' alt='picture' ></a>";
+        echo "<a href='.".$item."'target='_blank'><img src='".$item."' style='width: 100px' alt='picture' class='imgGallery'></a>";
     }
     echo "</div></div>";
 }
 ?>
-</body>
-</html>
