@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+<body>
 <h2>Gallery</h2>
 <form action="index.php?page=3" method="POST">
     <p>Выберите расширение для отображения картинок</p>
@@ -38,3 +47,5 @@ if(isset($_POST["showimg"])){
     echo "</div></div>";
 }
 ?>
+</body>
+</html>
