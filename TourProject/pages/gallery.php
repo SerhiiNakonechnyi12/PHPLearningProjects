@@ -23,7 +23,6 @@
         ?>
     </select>
     <input type="submit" name="showimg" value="Показать">
-    <input type="submit" name="showimg" value="Показать">
 </form>
 <br/>
 <?
