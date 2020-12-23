@@ -1,32 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <?
-    if($_FILES && $_FILES["photo"]["error"]==UPLOAD_ERR_OK)
-    {
-        $name = $_FILES["photo"]["name"];
-        move_uploaded_file($_FILES["photo"]["tmp_name"], "images/".$name);
-        echo "Файл успешно загружен на сервер!<br/>";
-        echo "<img src='images/".$name."' alt='photo' style='width: 200px; height: 150px'/>";
-    }
-    ?>
-    <h2 class="my-5" text-align="center">Add Images</h2>
-    <form method="POST" action="index.php?page=2" enctype="multipart/form-data">
-        <div class="input__wrapper">
-            <input type="file" name="photo" id="input__file" class="input__file-button btn btn-dark" accept="image/*" multiple>
-            <!-- <label for="input__file" class="input__file-button btn btn-dark">
-                <span class="input__file-button-text">Выберите файл</span>
-            </label> -->
-            
-            <input type="submit" value="Отправить" class="btn btn-dark">
-        </div>
-    </form>
-</body>
-</html>
+<h2>Add Image</h2>
+<?
+if (!isset($_POST["upldbtn"])){
+?>
+<form action="index.php?page=2" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="myfile">Select image for upload:</label>
+        <input type="hidden" name="MAX_FILE_SIZE" value="<?echo 1024*1024*10?>">
+        <input type="file" name="myfile" class="form-control" accept="image/">
+        <input type="submit" value="Send image" name="upldbtn">
 
+    </div>
+</form>
+<?
+}
+else{
+    if($_FILES["myfile"]["error"]!=0){
+        echo "<h3><span style='color:red'>Error file upload: ".$_FILES["myfile"]["error"]."</span></h3>";
+        exit();
+    }
+    if(is_uploaded_file($_FILES["myfile"]["tmp_name"])){
+        move_uploaded_file($_FILES["myfile"]["tmp_name"], "./images/".$_FILES["myfile"]["name"]);
+        echo "<h3><span style='color:green'>File uploaded successfully!</span></h3>";
+    }
+}
+?>
 
