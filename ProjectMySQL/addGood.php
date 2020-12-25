@@ -1,6 +1,6 @@
-<?
+<?php
 include_once("function.php");
-$title = "iPhone x11";
+$title = "iPhone x12";
 $price = 25999.9;
 $manuf = 1;
 if(addGood($title, $price, $manuf)){
@@ -9,4 +9,4 @@ if(addGood($title, $price, $manuf)){
 else
 echo "Error while good adding";
 
-
+?>
