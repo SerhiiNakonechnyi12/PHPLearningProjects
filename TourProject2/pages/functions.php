@@ -19,7 +19,7 @@ function register($login, $pass, $email){
         return false;
     }
     $link = connect();
-    $ins1 = "INSERT INTO `users`(`login`, `pass`, `email`, `roleid`) VALUES ('".$login."', '".md5($pass)."', '".$email."', 2)";
+    $ins1 = "INSERT INTO users(login, pass, email, roleid) VALUES ('".$login."', '".md5($pass)."', '".$email."', 2)";
     mysqli_query($link, $ins1);
     $err = mysqli_errno($link);
     if($err){

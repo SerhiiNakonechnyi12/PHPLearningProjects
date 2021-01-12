@@ -2,7 +2,7 @@
 <?php
 if(!isset($_POST["regbtn"])){
     ?>
-    <form action="index.php?page=3" method="$_POST">
+    <form action="index.php?page=3" method="POST">
         <div class="form-group">
             <label for="login">Login:</label>
             <input type="text" name="login" class="form-control">
@@ -16,7 +16,7 @@ if(!isset($_POST["regbtn"])){
             <input type="password" name="pass2" class="form-control">
         </div>
         <div class="form-group">
-            <label for="email">Password:</label>
+            <label for="email">Email:</label>
             <input type="email" name="email" class="form-control">
         </div>
         <button type="submit" class="btn btn-primary" name="regbtn">Register</button>

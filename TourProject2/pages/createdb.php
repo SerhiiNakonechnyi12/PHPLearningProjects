@@ -34,8 +34,8 @@ $qu5 = "CREATE TABLE Roles (
 $qu6 = "CREATE TABLE Users (
     id int not null primary KEY AUTO_INCREMENT, 
     login varchar(30) UNIQUE, 
-    pass varchar(30), 
-    email varchar(64), 
+    pass varchar(128), 
+    email varchar(128), 
     roleid int,
     FOREIGN KEY (roleid) REFERENCES Roles(id) ON DELETE CASCADE,
     discount int, 
