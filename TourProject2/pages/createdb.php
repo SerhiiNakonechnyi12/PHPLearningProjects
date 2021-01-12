@@ -3,7 +3,7 @@ include_once("functions.php");
 $link = connect();
 $qu1 = "CREATE TABLE Countries(
     id int not null auto_increment primary key,
-    country varchar(32) UNIQUE) default charset='utf8'"; 
+    country varchar(32) UNIQUE) default charset='utf8'";
 $qu2 = "CREATE TABLE Cities(
     id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     City varchar(32),
@@ -42,39 +42,38 @@ $qu6 = "CREATE TABLE Users (
     avatar mediumblob) default charset='utf8'";
 mysqli_query($link, $qu1);
 $err = mysqli_errno($link);
-if($err){
-    echo "<h3/><span style='color: red'>Query 1: ".$err."</span><h3/>";
+if ($err) {
+    echo "<h3/><span style='color: red'>Query 1: " . $err . "</span><h3/>";
     exit();
 }
 mysqli_query($link, $qu2);
 $err = mysqli_errno($link);
-if($err){
-    echo "<h3/><span style='color: red'>Query 2: ".$err."</span><h3/>";
+if ($err) {
+    echo "<h3/><span style='color: red'>Query 2: " . $err . "</span><h3/>";
     exit();
 }
 mysqli_query($link, $qu3);
 $err = mysqli_errno($link);
-if($err){
-    echo "<h3/><span style='color: red'>Query 3: ".$err."</span><h3/>";
+if ($err) {
+    echo "<h3/><span style='color: red'>Query 3: " . $err . "</span><h3/>";
     exit();
 }
 mysqli_query($link, $qu4);
 $err = mysqli_errno($link);
-if($err){
-    echo "<h3/><span style='color: red'>Query 4: ".$err."</span><h3/>";
+if ($err) {
+    echo "<h3/><span style='color: red'>Query 4: " . $err . "</span><h3/>";
     exit();
 }
 mysqli_query($link, $qu5);
 $err = mysqli_errno($link);
-if($err){
-    echo "<h3/><span style='color: red'>Query 5: ".$err."</span><h3/>";
+if ($err) {
+    echo "<h3/><span style='color: red'>Query 5: " . $err . "</span><h3/>";
     exit();
 }
 mysqli_query($link, $qu6);
 $err = mysqli_errno($link);
-if($err){
-    echo "<h3/><span style='color: red'>Query 6: ".$err."</span><h3/>";
+if ($err) {
+    echo "<h3/><span style='color: red'>Query 6: " . $err . "</span><h3/>";
     exit();
 }
 echo "<h3/><span style='color: green'>Таблицы созданы успешно!</span><h3/>";
-
