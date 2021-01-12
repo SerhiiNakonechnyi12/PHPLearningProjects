@@ -9,6 +9,6 @@
         <a <?php echo ($page==3) ? "class='nav-link active'" : "class='nav-link'"?> href="index.php?page=3">Registration</a>
     </li>
     <li class="nav-item">
-        <a <?php echo ($page==1) ? "class='nav-link active'" : "class='nav-link'"?> href="index.php?page=4">Admin Forms</a>
+        <a <?php echo ($page==4) ? "class='nav-link active'" : "class='nav-link'"?> href="index.php?page=4">Admin Forms</a>
     </li>
 </ul>
