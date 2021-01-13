@@ -11,4 +11,7 @@
   <li class="nav-item">
     <a <?php echo ($page==4) ? "class='nav-link active'" : "class='nav-link'"?> href="index.php?page=4">Admin Forms</a>
   </li>
+  <li class="nav-item">
+    <a <?php echo ($page==4) ? "class='nav-link active'" : "class='nav-link'"?> href="index.php?page=6">Private</a>
+  </li>
 </ul>

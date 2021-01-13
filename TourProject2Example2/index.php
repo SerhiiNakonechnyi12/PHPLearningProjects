@@ -36,6 +36,8 @@ if(isset($_GET["page"])){
     include_once("pages/registration.php");
     if($page==4)
     include_once("pages/admin.php");
+    if($page==6 )
+    include_once("pages/private.php");
 }
 ?>
 </div>

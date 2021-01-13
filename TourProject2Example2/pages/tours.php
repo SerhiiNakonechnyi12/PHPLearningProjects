@@ -2,12 +2,13 @@
 <?php
 echo "<form action='index.php?page=1' method='POST'>";
 $link = connect();
+$countryid = $_POST["countryid"];
 $sel1 = "SELECT * FROM Countries";
 $res = mysqli_query($link, $sel1);
 echo "<select name='countryid' class='col-sm-3 col-md-3 col-lg-3'>";
 echo "<option value='0'>Выберите страну...</option>";
 while ($row = mysqli_fetch_array($res, MYSQLI_NUM)) {
-    echo "<option value='" . $row[0] . "'>" . $row[1] . "</option>";
+    echo "<option value='" . $row[0] . "' ".($countryid == $row[0] ? "selected" : "").">" . $row[1] . "</option>";
 }
 echo "</select>";
 mysqli_free_result($res);
