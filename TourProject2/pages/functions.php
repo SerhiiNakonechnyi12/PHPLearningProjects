@@ -34,4 +34,3 @@ function register($login, $pass, $email){
     }
     return true;
 }
-?>

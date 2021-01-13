@@ -12,7 +12,7 @@ if(!isset($_POST["regbtn"])){
             <input type="password" name="pass1" class="form-control">
         </div>
         <div class="form-group">
-            <label for="pass2">Password:</label>
+            <label for="pass2">Repeat Password:</label>
             <input type="password" name="pass2" class="form-control">
         </div>
         <div class="form-group">
