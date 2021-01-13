@@ -184,16 +184,79 @@ JOIN Countries co ON ci.CountryId = co.id";
     <div class="col-sm-6 col-md-6 col-lg-6">
         <div class="text-center">Фото</div>
         <?php
-        echo "<form action='index.php?page=4' id='photoform' enctype='multipart/form-data'>";
-        $link = connect();
-        $sel4 = "SELECT  ho.id, ho.Hotel, ci.City, co.Country FROM Hotels ho JOIN Cities ci ON ho.citiid = ci.id
-        JOIN Countries co ON ci.CountryID = co.id";
-        $res = mysqli_query($link, $sel4);
-        echo "<select name='hotelid'";
-        while($row = mysqli_fetch_array($res, MYSQLI_NUM)){
-            echo "<option value='".$row[0]."'>".$row[1]."&nbsp;:&nbsp;".$row[2]."&nbsp;:&nbsp;".$row[3]."</option>";
+        if (!isset($_POST["upldbtn"])) {
+        ?>
+            <form action="index.php?page=4" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="myfile">Select image for upload:</label>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="<?echo 1024*1024*10?>">
+                    <input type="file" name="myfile" class="form-control" accept="image/">
+                    <input type="submit" value="Send image" name="upldbtn" class='btn btn-sm btn-info'>
+                </div>
+            </form>
+        <?php
+        } else {
+        ?>
+            <form action="index.php?page=4" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="myfile">Select image for upload:</label>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="<?echo 1024*1024*10?>">
+                    <input type="file" name="myfile" class="form-control" accept="image/">
+                    <input type="submit" value="Send image" name="upldbtn" class='btn btn-sm btn-info'>
+                </div>
+            </form>
+        <?php
+            if ($_FILES["myfile"]["error"] != 0) {
+                echo "<h3><span style='color:red'>Error file upload: " . $_FILES["myfile"]["error"] . "</span></h3>";
+                exit();
+            }
+            if (is_uploaded_file($_FILES["myfile"]["tmp_name"])) {
+                move_uploaded_file($_FILES["myfile"]["tmp_name"], "./images/" . $_FILES["myfile"]["name"]);
+                echo "<h3><span style='color:green'>File uploaded successfully!</span></h3>";
+            }
         }
-        echo "</form>"
+        ?>
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-6">
+        <div class="text-center">Gallery</div>
+        <form action="index.php?page=4" method="POST">
+            <p>Выберите расширение для отображения картинок</p>
+            <select name="ext">
+                <?php
+                $path = "images/";
+                if ($dir = opendir($path)) {
+                    $arr = array();
+                    while (($file = readdir($dir)) !== false) {
+                        if ($file == "." || $file == "..") continue;
+                        $file = $path . $file;
+                        // if(is_file($file)){
+                        $pos = strpos($file, ".");
+                        $ext = substr($file, $pos + 1);
+                        $ext = strtolower($ext);
+                        // }
+                        if (!in_array($ext, $arr)) {
+                            $arr[] = $ext;
+                            echo "<option>$ext</option>";
+                        }
+                    }
+                }
+                ?>
+            </select>
+            <input type="submit" name="showimg" value="Показать" class='btn btn-sm btn-info'>
+        </form>
+        <br />
+        <?php
+        if(isset($_POST["showimg"])){
+            $ext = $_POST["ext"];
+            $arr = glob($path."*.".$ext);
+            echo "<div class='card border-secondary mb-3'>";
+            echo "<div class='card-header'>Gallery Content</div>";
+            echo "<div class='card-body'>";
+            foreach($arr as $item){
+                echo "<a href='.".$item."'target='_blank'><img src='".$item."' style='width: 100px' alt='picture' class='imgGallery'></a>";
+            }
+            echo "</div></div>";
+        }
         ?>
     </div>
 </div>
