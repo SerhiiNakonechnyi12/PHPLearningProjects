@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+
+* {
+    margin: 5px;
+    padding: 10px;
+}
+
+h3 {
+    font-family: 'Yusei Magic', sans-serif;
+}
