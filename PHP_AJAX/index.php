@@ -11,7 +11,7 @@
     <script>
         async function showNames(val){
             let response = await fetch("ajax.php?name="+val, {method: "GET"});
-            if(response.ok ===true){
+            if(response.ok === true){
                 let content = await response.text();
                 let resDiv = document.getElementById("res");
                 resDiv.innerHTML = content;
