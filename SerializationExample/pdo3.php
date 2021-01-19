@@ -1,6 +1,10 @@
 <?php
 
 // HW
+// Тема: Сериализация
+// Задание.
+// Подготовить список туров в JSON-формате для отправки API стороннему приложению. 
+// Формирование файла должен выполнять отдельный файл скрипта.
 
 include_once("pdo1.php");
 $pdo = connect();
@@ -28,3 +32,21 @@ while($row = $ps4->fetch(PDO::FETCH_ASSOC)){
 }
 //echo "</table>";
 echo json_encode($arr);
+
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script type="text/javascript" src="">
+
+</script>
+    
+</body>
+</html>
