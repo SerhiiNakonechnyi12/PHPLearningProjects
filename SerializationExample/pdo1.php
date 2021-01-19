@@ -16,10 +16,10 @@ catch(PDOException $ex){
 }
 }
 
-$link = connect(); 
-$res = $link->query("SELECT * FROM Countries");
-echo "<ul>";
-while($row= $res->fetch()){
-    echo "<li>" .$row[0] .". " .$row["1"]."</li>";
-}
-echo "</ul>";
+// $link = connect(); 
+// $res = $link->query("SELECT * FROM Countries");
+// echo "<ul>";
+// while($row= $res->fetch()){
+//     echo "<li>" .$row[0] .". " .$row["1"]."</li>";
+// }
+// echo "</ul>";
