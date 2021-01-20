@@ -20,6 +20,8 @@ class Picture{
 
 $picture = new Picture(1, "car", 256, "images");
 $picture->Show();
-$str = serialize($picture);
+//$str = serialize($picture);
+$str = json_encode($picture);
 echo $str ."<br>";
-file_put_contents("serialPicture.txt", $str);
+// file_put_contents("serialPicture.txt", $str);
+file_put_contents("picture.json", $str);

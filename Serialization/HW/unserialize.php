@@ -1,25 +1,12 @@
 <?php
-// class Picture{
-//     public $id;
-//     private $name;
-//     private $size;
-//     private $imagepath;
-//     function __construct($id, $name, $size, $imagepath)
-//     {
-//         $this->id = $id;
-//         $this->name = $name;    
-//         $this->size = $size;    
-//         $this->imagepath = $imagepath;    
-//     }
+// $str = file_get_contents("serialPicture.txt");
+// echo $str ."<br>";
+// $picture = unserialize($str);
+// $picture->Show();
 
-//     function Show(){
-//         echo "id: " . $this->id .", Name: ". $this->name."<br>
-//         Size: " . $this->size .", imagepath: ". $this->imagepath."<br>";
-//     }
-// }
-
-$str = file_get_contents("serialPicture.txt");
+$str = file_get_contents("point.json");
 echo $str ."<br>";
-$picture = unserialize($str);
-$picture->Show();
-
+$picture2 = json_decode($str);
+var_dump($picture2);
+echo  "<br>". $picture2->y;
+echo $picture2->Show();
