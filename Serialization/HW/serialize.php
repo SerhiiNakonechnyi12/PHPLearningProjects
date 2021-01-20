@@ -1,9 +1,9 @@
 <?php
 class Picture{
     public $id;
-    private $name;
-    private $size;
-    private $imagepath;
+    public $name;
+    public $size;
+    public $imagepath;
     function __construct($id, $name, $size, $imagepath)
     {
         $this->id = $id;
@@ -13,8 +13,8 @@ class Picture{
     }
 
     function Show(){
-        echo "id: " . $this->id .", Name: ". $this->name."<br>
-        Size: " . $this->size .", imagepath: ". $this->imagepath."<br>";
+        echo "id: " . $this->id .", <br> Name: ". $this->name."<br>
+        Size: " . $this->size .", <br>imagepath: ". $this->imagepath."<br>";
     }
 }
 
