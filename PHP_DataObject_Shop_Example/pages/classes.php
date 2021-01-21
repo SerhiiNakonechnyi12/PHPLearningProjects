@@ -2,7 +2,7 @@
 class Tools{
     static function connect(
         $host="localhost:3306",
-        $dbname="shopDb",
+        $dbname="storeDb", //shopDb
         $user = "root",
         $pass="root"){
             $cs = "mysql:host=". $host. ";dbname=". $dbname . ";charset=utf8";
