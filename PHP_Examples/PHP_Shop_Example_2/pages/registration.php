@@ -1,9 +1,7 @@
 <?php
-
-// Если не установлена переменная Post со значением regbtn
-if(!isset($_POST["regbtn"])){
-    ?>
-    <form action="index.php?page=3" method="POST" enctype="multipart/form-data" class="mx-3">
+if (!isset($_POST["regbtn"])) {
+?>
+    <form action="index.php?page=3" method="POST" enctype="multipart/form-data">
         <div class="form-group">
             <label for="login">Login:</label>
             <input type="text" name="login" class="form-control">
@@ -22,21 +20,17 @@ if(!isset($_POST["regbtn"])){
         </div>
         <input type="submit" value="Зарегистрироваться" class="btn btn-primary" name="regbtn">
     </form>
+
 <?php
 } else {
-    // Если файл загружен
-    if(is_uploaded_file($_FILES["imagepath"]["tmp_name"])){
+    if (is_uploaded_file($_FILES["imagepath"]["tmp_name"])) {
         $path = "images/" . $_FILES["imagepath"]["name"];
         move_uploaded_file($_FILES["imagepath"]["tmp_name"], $path);
         $login = trim($_POST["login"]);
         $pass1 = trim($_POST["pass1"]);
-        if(Tools::register($login, $pass1, $path)){
-            echo "<h3><span style='color: green'>Пользователь успешно добавлен!</span><h3/>";
+        if (Tools::register($login, md5($pass1), $path)) {
+            echo "<h3/><span style='color: green'>Пользователь успешно добавлен!</span><h3/>";
         }
     }
-
 }
-
-
-
 ?>
