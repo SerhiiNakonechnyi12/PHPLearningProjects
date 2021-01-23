@@ -32,5 +32,6 @@ while($row = $ps4->fetch(PDO::FETCH_ASSOC)){
 }
 //echo "</table>";
 echo json_encode($arr);
+//
 
 ?>
