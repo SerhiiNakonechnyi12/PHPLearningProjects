@@ -86,6 +86,7 @@ class Customer
             $ps = $pdo->prepare("INSERT INTO Customers(login, pass, roleid, imagepath, discount, total) VALUES(:login, :pass, :roleid, :imagepath, :discount, :total)");
             $ps->execute($arr);
             $this->id = $pdo->lastInsertId();
+            //return "Пользователь успешно добавлен в БД!";
             // echo "Пользователь успешно добавлен в БД! <br>";
             // echo $this;
         } catch (PDOException $ex) {
