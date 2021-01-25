@@ -57,5 +57,5 @@ $sales = "    CREATE TABLE SAles(
     $role2 = "Customer";
     $ps2->bindParam(":role", $role2);
     $ps2->execute();
-    //echo "Таблицы БД успешно созданы!";
+    // echo "Таблицы БД успешно созданы!";
     echo "Роли успешно добавлены!";

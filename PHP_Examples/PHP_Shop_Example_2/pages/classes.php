@@ -3,7 +3,7 @@ class Tools
 {
     static function connect(
         $host = "localhost:3306",
-        $dbname = "shopDb",
+        $dbname = "shopDb2",
         $user = "root",
         $pass = "root"
     ) {
