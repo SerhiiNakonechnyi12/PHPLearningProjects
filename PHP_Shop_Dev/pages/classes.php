@@ -62,7 +62,7 @@ class Customer
         $this->pass = $pass;
         $this->imagepath = $imagepath;
         $this->id = $id;
-        $this->roleid = 3;
+        $this->roleid = 2;
         $this->discount = 0;
         $this->total = 0;
     }
