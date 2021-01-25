@@ -1,5 +1,4 @@
 <?php
-
 // Если не установлена переменная Post со значением regbtn
 if(!isset($_POST["regbtn"])){
     ?>
@@ -30,8 +29,8 @@ if(!isset($_POST["regbtn"])){
         move_uploaded_file($_FILES["imagepath"]["tmp_name"], $path);
         $login = trim($_POST["login"]);
         $pass1 = trim($_POST["pass1"]);
-        if(Tools::register($login, $pass1, $path)){
-            echo "<h3><span style='color: green'>Пользователь успешно добавлен!</span><h3/>";
+        if (Tools::register($login, md5($pass1), $path)) {
+            echo "<h3/><span style='color: green'>Пользователь успешно добавлен!</span><h3/>";
         }
     }
 
