@@ -22,10 +22,11 @@ class Tools
         }
     }
 
-    static function register($login, $pass, $imagepath){
+    static function register($login, $pass, $imagepath)
+    {
         $customer = new Customer($login, $pass, $imagepath);
         $err = $customer->intoDb();
-        if($err){
+        if ($err) {
             if ($err == 1062) {
                 echo "<h3/><span style='color: red'>Пользователь c таким логином уже существует</span><h3/>";
             } else {
@@ -112,6 +113,67 @@ class Customer
             $customer->discount = $row["discount"];
             $customer->roleid = $row["roleid"];
             return $customer;
+        } catch (PDOException $ex) {
+            echo $ex->getMessage();
+            return false;
+        }
+    }
+}
+
+class Item
+{
+    /*
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    itemName varchar(64) not null,
+    catId int,
+    FOREIGN KEY(catId) REFERENCES Categories(id) ON UPDATE CASCADE,
+    priceIn double,
+    priceSale double,
+    info varchar(256),
+    rate double,
+    action int
+    */
+    public  $id, $itemName, $catId, $priceIn, $priceSale, $info, $rate, $action;
+
+    function __construct($itemName, $catId, $priceIn, $priceSale, $info, $rate = 0, $action = 0, $id = 0)
+    {
+        $this->itemName = $itemName;
+        $this->catId = $catId;
+        $this->priceIn = $priceIn;
+        $this->priceSale = $priceSale;
+        $this->info = $info;
+        $this->rate = $rate;
+        $this->action = $action;
+        $this->id = $id;
+    }
+
+    function intoDb()
+    {
+        try {
+            $pdo = Tools::connect();
+            $ps = $pdo->prepare("INSERT INTO Items(itemName, catId, priceIn, priceSale, info, rate, action)
+        VALUES(:itemName, :catId, :priceIn, :priceSale, :info, :rate, :action)");
+            $arr = (array) $this;
+            array_shift($arr);
+            $ps->execute($arr);
+            $this->id = $pdo->lastInsertId();
+        } catch (PDOException $ex) {
+            $err = $ex->getMessage();
+            echo "Exception: " . $err . "<br>";
+            return $ex->getCode();
+        }
+    }
+
+    static function FromDb($id){
+        $item = null;
+        try {
+            $pdo = Tools::connect();
+            $ps = $pdo->prepare("SELECT * FROM Items WHERE id=?");
+            $ps->execute(array($id));
+            $row = $ps->fetch();
+            $item = new Item($row["itemName"], $row["catId"], $row["priceIn"], $row["priceSale"], $row["info"],
+            $row["rate"], $row["action"], $row["id"]);            
+            return $item;
         } catch (PDOException $ex) {
             echo $ex->getMessage();
             return false;
