@@ -2,7 +2,7 @@
 // Если не установлена переменная Post со значением regbtn
 if(!isset($_POST["regbtn"])){
     ?>
-    <form action="index.php?page=3" method="POST" enctype="multipart/form-data" class="mx-3">
+    <form action="index.php?page=3" method="POST" enctype="multipart/form-data" class="col-4 mx-3">
         <div class="form-group">
             <label for="login">Login:</label>
             <input type="text" name="login" class="form-control">

@@ -133,9 +133,9 @@ class Item
     rate double,
     action int
     */
-    public  $id, $itemName, $catId, $priceIn, $priceSale, $info, $rate, $action;
+    public  $id, $itemName, $catId, $priceIn, $priceSale, $info, $rate, $action, $imagePath;
 
-    function __construct($itemName, $catId, $priceIn, $priceSale, $info, $rate = 0, $action = 0, $id = 0)
+    function __construct($itemName, $catId, $priceIn, $priceSale, $info, $imagePath, $rate = 0, $action = 0, $id = 0)
     {
         $this->itemName = $itemName;
         $this->catId = $catId;
@@ -145,14 +145,15 @@ class Item
         $this->rate = $rate;
         $this->action = $action;
         $this->id = $id;
+        $this->imagePath = $imagePath;
     }
 
     function intoDb()
     {
         try {
             $pdo = Tools::connect();
-            $ps = $pdo->prepare("INSERT INTO Items(itemName, catId, priceIn, priceSale, info, rate, action)
-        VALUES(:itemName, :catId, :priceIn, :priceSale, :info, :rate, :action)");
+            $ps = $pdo->prepare("INSERT INTO Items(itemName, catId, priceIn, priceSale, info, imagePath, rate, action)
+        VALUES(:itemName, :catId, :priceIn, :priceSale, :info, :imagePath, :rate, :action)");
             $arr = (array) $this;
             array_shift($arr);
             $ps->execute($arr);
@@ -171,8 +172,8 @@ class Item
             $ps = $pdo->prepare("SELECT * FROM Items WHERE id=?");
             $ps->execute(array($id));
             $row = $ps->fetch();
-            $item = new Item($row["itemName"], $row["catId"], $row["priceIn"], $row["priceSale"], $row["info"],
-            $row["rate"], $row["action"], $row["id"]);            
+            $item = new Item($row["itemName"], $row["catId"], $row["priceIn"], $row["priceSale"], $row["info"], 
+            $row["imagePath"], $row["rate"], $row["action"], $row["id"]);            
             return $item;
         } catch (PDOException $ex) {
             echo $ex->getMessage();
