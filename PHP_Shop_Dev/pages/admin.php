@@ -7,7 +7,7 @@ if(!isset($_POST["additem"])){
     <label for="itemName">Название:</label>
     <input type="text" name="itemName" class="form-control">
     </div>
-    <div class="form-group">
+    <div class="form-group"></div>
     <label for="catId">Выберите категорию:</label>
     <select name="catId" class="form-control">
     <?php
