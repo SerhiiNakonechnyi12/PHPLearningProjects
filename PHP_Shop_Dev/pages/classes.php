@@ -180,4 +180,38 @@ class Item
             return false;
         }
     }
+
+    static function getItems($catId = 0)
+    {
+        try {
+            $pdo = Tools::connect();
+            $items = array();
+            if ($catId == 0) {
+                $ps = $pdo->prepare("SELECT * FROM Items");
+                $ps->execute();
+            } else {
+                $ps = $pdo->prepare("SELECT * FROM Items WHERE catId=?");
+                $ps->execute(array($catId));
+            }
+            while ($row = $ps->fetch()) {
+                $item = new Item(
+                    $row["itemName"],
+                    $row["catId"],
+                    $row["priceIn"],
+                    $row["priceSale"],
+                    $row["info"],
+                    $row["imagePath"],
+                    $row["rate"],
+                    $row["action"],
+                    $row["id"]
+                );
+                $items[] = $item;
+            }
+            return $items;
+        }
+         catch (PDOException $ex) {
+            return false;
+        }
+    }
 }
+

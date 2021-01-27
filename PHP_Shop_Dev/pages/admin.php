@@ -1,3 +1,4 @@
+<br>
 <h3 class="mx-3">Админ панель</h3>
 <?php
 if (!isset($_POST["additem"])) {
@@ -20,7 +21,7 @@ if (!isset($_POST["additem"])) {
             ?>
         </select>
         </div>
-        <div class="form-group">
+        <div class="form-group p-2">
             <label for="priceIn">Цена поставки:</label>
             <input type="text" name="priceIn" class="form-control">
             <label for="priceSale">Цена продажи:</label>
@@ -57,3 +58,6 @@ if (!isset($_POST["additem"])) {
 }
 
 ?>
+
+<br>
+<h3 class="mx-3">Добавление категорий</h3>
