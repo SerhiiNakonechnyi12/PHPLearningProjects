@@ -8,7 +8,7 @@ class Catalog_model extends CI_Model
 
     public function getItems()
     {
-        $res = $this->db->set("items");
-        return $res->res->result_array();
+        $res = $this->db->get("items");
+        return $res->result_array();
     }
 }

@@ -12,7 +12,7 @@ foreach ($items as $itm) {
     echo "<td>" . $itm["info"] . "</td>";
     echo "<td>" . $itm["rate"] . "</td>";
     echo "<td>" . $itm["action"] . "</td>";
-    echo "<td>" . $itm["imagePath"] . "</td>";
+    // echo "<td>" . $itm["imagePath"] . "</td>";
     echo "</tr>";
 }
 echo "</table>";
