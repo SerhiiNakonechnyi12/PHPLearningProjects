@@ -1,7 +1,7 @@
 <?php
 $this->load->view("header");
 echo "<h3>Список пользователей сайта</h3>";
-echo "<table>";
+echo "<table class='table table-striped'>";
 foreach ($customers as $c) {
     echo "<tr>";
     echo "<td>" . $c["id"] . "</td>";
